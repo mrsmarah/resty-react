@@ -8,6 +8,7 @@
 
 - [submission PR base](https://github.com/marah-401-advanced-javascript/resty-react/pull/1)
 -  [submission PR testing](https://github.com/marah-401-advanced-javascript/resty-react/pull/2)
+-  [submission PR props](https://github.com/marah-401-advanced-javascript/resty-react/pull/7)
 
 - [deployed Application GH](https://marah-401-advanced-javascript.github.io/resty-react/)
 - [deployed Application netlify](https://resty-app.netlify.app/)
@@ -25,7 +26,7 @@
 
 #### Tests
 
-- Unit Tests: `npm test` not done yet
+- Unit Tests: `npm test`
 - Lint Tests: `npm run lint`
 
 

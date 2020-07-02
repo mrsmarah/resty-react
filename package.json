@@ -2,12 +2,12 @@
   "name": "resty-react",
   "version": "0.1.0",
   "private": true,
-  "main":"src/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrsmarah/resty-react.git"
   },
-  "homepage":"https://mrsmarah.github.io/resty-react/",
+  "homepage": "https://mrsmarah.github.io/resty-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -17,6 +17,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-json-view": "^1.19.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
