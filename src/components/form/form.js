@@ -2,10 +2,13 @@ import React from 'react';
 import './form.scss';
 
 class Form extends React.Component {
-  
+  history=[];
   constructor(props) {
     super(props);
-    this.state = { method: '', url: '', body:'', history:[]};
+    this.state = { method: '', url: '', body:''};
+    if(!JSON.parse(localStorage.getItem('history'))){
+      localStorage.setItem('history', JSON.stringify(this.history));
+    }
   }
   //watch the change of the url input
   handleUrl = (e) => {
@@ -63,10 +66,10 @@ class Form extends React.Component {
       });
       const headers = { 'Content-Type': raw.headers.get('Content-Type') };
       const data = await raw.json();
-      this.props.handler(data,headers);
       this.history = JSON.parse(localStorage.getItem('history'));
       this.history.push({url:url, method: method, response: data });
       localStorage.setItem('history', JSON.stringify(this.history));
+      this.props.handler(data,headers);
 
     }else if(this.state.url && this.state.method==='get'){
       const url = this.state.url;
@@ -84,10 +87,16 @@ class Form extends React.Component {
       });
       const headers = { 'Content-Type': raw.headers.get('Content-Type') };
       const data = await raw.json();
-      this.props.handler(data,headers);
+      // if(localStorage){
       this.history = JSON.parse(localStorage.getItem('history'));
       this.history.push({url:url, method: method, response: data });
+
+      // }
+
       localStorage.setItem('history', JSON.stringify(this.history));
+      this.props.handler(data,headers);
+
+     
     }
     else if(this.state.url && this.state.method==='delete'){
       const url = this.state.url;
@@ -103,10 +112,11 @@ class Form extends React.Component {
         redirect: 'follow',
         referrerPolicy: 'no-referrer', 
       });
-      this.props.handler(raw);
       this.history = JSON.parse(localStorage.getItem('history'));
       this.history.push({url:url, method: method, response: raw });
       localStorage.setItem('history', JSON.stringify(this.history));
+      this.props.handler(raw);
+
     }
     
     else{
