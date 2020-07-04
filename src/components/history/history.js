@@ -67,6 +67,7 @@ class History extends React.Component{
 
 export default History;
 
+
 //<div><pre>"Response":{JSON.stringify(query.response,null,2)}</pre></div>
 // {
 //     this.state.history.map((query,i) => {
